@@ -69,4 +69,45 @@ console.log(booleanIsLoggedIn); // true
 let someNumber = 33;
 let stringNumber = String(someNumber);
 console.log(stringNumber); // "33"
+```
+
+### Operations
+
+JavaScript provides various operators to perform operations on values.
+
+- **Arithmetic Operators**: Perform mathematical calculations.
+  - `+`: Addition
+  - `-`: Subtraction
+  - `*`: Multiplication
+  - `/`: Division
+  - `%`: Modulus (remainder)
+  - `**`: Exponentiation
+
+- **String Concatenation**: Combines strings together.
+  - `+`: Concatenates strings (e.g., `"Hello" + " " + "World"` results in `"Hello World"`)
+
+- **Increment and Decrement Operators**: Increase or decrease the value of a variable.
+  - `++`: Increment (adds 1 to the operand)
+  - `--`: Decrement (subtracts 1 from the operand)
+
+Example:
+
+```javascript
+let value = 3;
+let negValue = -value; // -3
+
+console.log(2 + 2); // 4
+console.log(2 - 2); // 0
+console.log(2 * 2); // 4
+console.log(2 / 2); // 1
+console.log(2 % 2); // 0
+console.log(2 ** 3); // 8
+
+let str1 = "Hello";
+let str2 = "Hitesh";
+let str3 = str1 + " " + str2; // "Hello Hitesh"
+
+let gameCounter = 100;
+gameCounter++; // 101
+```
 
