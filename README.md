@@ -282,3 +282,80 @@ console.log(userOne.email); // Output: ravi@google.com
 console.log(userTwo.email); // Output: ravi@google.com
 ```
 
+## Strings in JavaScript
+
+Strings are sequences of characters used to represent text. In JavaScript, strings are primitive data types and are immutable, meaning their values cannot be changed after creation.
+
+### String Creation
+
+Strings can be created using single quotes (`'...'`), double quotes (`"..."`), or template literals (`` `...` ``).
+
+```javascript
+const name = "hitesh";
+const repoCount = 50;
+
+// Using template literals for string interpolation
+console.log(`Hello my name is ${name} and my repo count is ${repoCount}`);
+
+const gameName = new String('hitesh-hc-com'); // String object
+```
+
+### String Properties and Methods
+
+JavaScript provides various properties and methods to manipulate strings.
+
+- **`length`**: Returns the length of the string.
+  ```javascript
+  console.log(gameName.length); // Output: 12
+  ```
+
+- **`charAt(index)`**: Returns the character at the specified index.
+  ```javascript
+  console.log(gameName.charAt(2)); // Output: t
+  ```
+
+- **`indexOf(substring)`**: Returns the index of the first occurrence of the specified substring.
+  ```javascript
+  console.log(gameName.indexOf('t')); // Output: 2
+  ```
+
+- **`substring(startIndex, endIndex)`**: Extracts a substring from the given string, starting at `startIndex` and ending before `endIndex`.
+  ```javascript
+  const newString = gameName.substring(0, 4);
+  console.log(newString); // Output: hite
+  ```
+
+- **`slice(startIndex, endIndex)`**: Extracts a section of a string and returns it as a new string. It can also accept negative indices.
+  ```javascript
+  const anotherString = gameName.slice(-8, 4);
+  console.log(anotherString); // Output: 
+  ```
+
+- **`trim()`**: Removes whitespace from both ends of a string.
+  ```javascript
+  const newStringOne = "   hitesh    ";
+  console.log(newStringOne); // Output: "   hitesh    "
+  console.log(newStringOne.trim()); // Output: "hitesh"
+  ```
+
+- **`replace(searchValue, newValue)`**: Replaces the first occurrence of `searchValue` with `newValue`.
+  ```javascript
+  const url = "https://hitesh.com/hitesh%20choudhary";
+  console.log(url.replace('%20', '-')); // Output: https://hitesh.com/hitesh-choudhary
+  ```
+
+- **`includes(substring)`**: Checks if a string contains the specified substring.
+  ```javascript
+  console.log(url.includes('sundar')); // Output: false
+  ```
+
+- **`split(separator)`**: Splits a string into an array of substrings based on the specified separator.
+  ```javascript
+  console.log(gameName.split('-')); // Output: [ 'hitesh', 'hc', 'com' ]
+  ```
+
+- **`toUpperCase()`**: Converts the string to uppercase.
+  ```javascript
+  console.log(gameName.toUpperCase()); // Output: HITESH-HC-COM
+  ```
+
