@@ -11,7 +11,7 @@ let userEmail;
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id === anotherId);
+// console.log(id === anotherId);
 
 // const bigNumber = 3456543576654356754n
 
@@ -31,7 +31,40 @@ const myFunction = function(){
     console.log("Hello world");
 }
 
-console.log(typeof anotherId);
+// console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+
+//  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Memory allocation
+
+// Stack (Premitive data types (Copy of the value))
+// Heap (Non-Premitive data types (Reference of the value))
+
+
+let myYoutubename = "CodeWithHarry";
+
+let myAnotherYoutubeName = myYoutubename;
+
+myAnotherYoutubeName = "CodeWithAnkit";
+
+console.log(myYoutubename);
+
+console.log(myAnotherYoutubeName);
+
+
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@okhdfcbank",
+  };
+  
+let userTwo = userOne;
+userTwo.email = "ravi@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
 
