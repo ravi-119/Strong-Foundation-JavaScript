@@ -238,3 +238,47 @@ console.log("2" == 2);   // true (loose equality, string "2" is converted to num
 console.log("2" === 2);  // false (strict equality, no type conversion, string and number are different)
 ```
 
+### Memory Allocation
+
+In JavaScript, memory allocation can be categorized into two types: stack and heap.
+
+#### Stack Memory (Primitive Data Types)
+
+- Stack memory is used for primitive data types.
+- Each variable gets its own copy of the value.
+- Changes to one variable do not affect other variables.
+
+Example:
+
+```javascript
+let myYoutubename = "CodeWithHarry";
+let myAnotherYoutubeName = myYoutubename;
+
+myAnotherYoutubeName = "CodeWithAnkit";
+
+console.log(myYoutubename);       // Output: CodeWithHarry
+console.log(myAnotherYoutubeName);  // Output: CodeWithAnkit
+```
+
+#### Heap Memory (Non-Primitive Data Types)
+
+- Heap memory is used for non-primitive (reference) data types like objects and arrays.
+- Variables store a reference to the memory location where the object is stored.
+- Multiple variables can point to the same object in memory.
+- Changes to the object through one variable will affect all other variables that reference the same object.
+
+Example:
+
+```javascript
+let userOne = {
+    email: "user@google.com",
+    upi: "user@okhdfcbank",
+};
+
+let userTwo = userOne;
+userTwo.email = "ravi@google.com";
+
+console.log(userOne.email); // Output: ravi@google.com
+console.log(userTwo.email); // Output: ravi@google.com
+```
+
