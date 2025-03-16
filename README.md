@@ -358,3 +358,107 @@ JavaScript provides various properties and methods to manipulate strings.
   ```javascript
   console.log(gameName.toUpperCase()); // Output: HITESH-HC-COM
   ```
+
+## Numbers and Maths in JavaScript
+
+### Numbers
+
+In JavaScript, numbers can be represented as primitive data types or as Number objects.
+
+#### Number Declaration
+
+- Primitive Number:
+  ```javascript
+  const score = 400;
+  ```
+- Number Object:
+  ```javascript
+  const balance = new Number(100);
+  console.log(balance); // Output: [Number: 100]
+  ```
+
+#### Number Properties and Methods
+
+- **`toString()`**: Converts a number to a string.
+  ```javascript
+  const balance = new Number(100);
+  console.log(balance.toString().length); // Output: 3
+  ```
+
+- **`toFixed(digits)`**: Formats a number using fixed-point notation.
+  ```javascript
+  const balance = new Number(100);
+  console.log(balance.toFixed(2)); // Output: 100.00
+  ```
+
+- **`toPrecision(precision)`**: Formats a number to a specified precision.
+  ```javascript
+  const otherNumber = 123.8966;
+  console.log(otherNumber.toPrecision(3)); // Output: 124
+  ```
+
+- **`toLocaleString(locale)`**: Converts a number to a string using locale-specific formatting.
+  ```javascript
+  const hundreds = 1000000;
+  console.log(hundreds.toLocaleString('en-IN')); // Output: 10,00,000 (Indian numbering system)
+  ```
+
+### Maths
+
+The `Math` object provides properties and methods for mathematical constants and functions.
+
+#### Basic Math Functions
+
+- **`Math.abs(x)`**: Returns the absolute value of a number.
+  ```javascript
+  console.log(Math.abs(-4)); // Output: 4
+  ```
+
+- **`Math.round(x)`**: Returns the value of a number rounded to the nearest integer.
+  ```javascript
+  console.log(Math.round(4.5)); // Output: 5
+  ```
+
+- **`Math.ceil(x)`**: Returns the smallest integer greater than or equal to a number.
+  ```javascript
+  console.log(Math.ceil(4.1)); // Output: 5
+  ```
+
+- **`Math.floor(x)`**: Returns the largest integer less than or equal to a number.
+  ```javascript
+  console.log(Math.floor(4.9)); // Output: 4
+  ```
+
+- **`Math.pow(x, y)`**: Returns the base `x` to the exponent `y`.
+  ```javascript
+  console.log(Math.pow(2, 3)); // Output: 8
+  ```
+
+- **`Math.sqrt(x)`**: Returns the square root of a number.
+  ```javascript
+  console.log(Math.sqrt(9)); // Output: 3
+  ```
+
+- **`Math.min(x1, x2, ...)`**: Returns the smallest of zero or more numbers.
+  ```javascript
+  console.log(Math.min(1, 2, 3, 4, 5)); // Output: 1
+  ```
+
+- **`Math.max(x1, x2, ...)`**: Returns the largest of zero or more numbers.
+  ```javascript
+  console.log(Math.max(1, 2, 3, 4, 5)); // Output: 5
+  ```
+
+#### Random Numbers
+
+- **`Math.random()`**: Returns a pseudo-random number between 0 (inclusive) and 1 (exclusive).
+  ```javascript
+  console.log(Math.random()); // Output: A random number between 0 and 1
+  ```
+
+- Generating a random number between a specified range:
+  ```javascript
+  const min = 10;
+  const max = 20;
+  console.log(Math.floor(Math.random() * (max - min + 1)) + min); // Output: A random number between 10 and 20
+  ```
