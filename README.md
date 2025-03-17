@@ -462,3 +462,106 @@ The `Math` object provides properties and methods for mathematical constants and
   const max = 20;
   console.log(Math.floor(Math.random() * (max - min + 1)) + min); // Output: A random number between 10 and 20
   ```
+
+## Dates in JavaScript
+
+JavaScript provides the `Date` object to work with dates and times. The `Date` object allows you to create, manipulate, and format dates.
+
+### Creating Dates
+
+You can create a `Date` object in several ways:
+
+- **Current Date and Time**:
+  ```javascript
+  let myDate = new Date();
+  console.log(myDate.toString()); // Output: Current date and time as a string
+  ```
+
+- **Specific Date**:
+  ```javascript
+  let myCreatedDate = new Date(2025, 0, 23); // January 23, 2025
+  console.log(myCreatedDate.toDateString()); // Output: Thu Jan 23 2025
+  ```
+
+- **Specific Date and Time**:
+  ```javascript
+  let myCreatedDate = new Date(2025, 0, 23, 5, 3); // January 23, 2025, 05:03 AM
+  console.log(myCreatedDate.toLocaleString()); // Output: 1/23/2025, 5:03:00 AM
+  ```
+
+- **Date from String**:
+  ```javascript
+  let myCreatedDate = new Date("2025-01-14");
+  console.log(myCreatedDate.toLocaleString()); // Output: 1/14/2025, 12:00:00 AM
+  ```
+
+### Timestamps
+
+The `Date.now()` method returns the number of milliseconds since January 1, 1970 (Unix Epoch).
+
+- **Current Timestamp**:
+  ```javascript
+  let myTimeStamp = Date.now();
+  console.log(myTimeStamp); // Output: Current timestamp in milliseconds
+  ```
+
+- **Convert to Seconds**:
+  ```javascript
+  console.log(Math.floor(Date.now() / 1000)); // Output: Current timestamp in seconds
+  ```
+
+### Date Methods
+
+The `Date` object provides various methods to retrieve and manipulate date components:
+
+- **Get Current Month**:
+  ```javascript
+  let newDate = new Date();
+  console.log(newDate.getMonth() + 1); // Output: Current month (1-12)
+  ```
+
+- **Get Current Date**:
+  ```javascript
+  console.log(newDate.getDate()); // Output: Current day of the month
+  ```
+
+- **Get Day of the Week**:
+  ```javascript
+  console.log(newDate.getDay()); // Output: Day of the week (0 for Sunday, 6 for Saturday)
+  ```
+
+### Formatting Dates
+
+You can format dates using the `toLocaleString` method with options:
+
+- **Format with Weekday and Time Zone**:
+  ```javascript
+  newDate.toLocaleString('default', {
+      weekday: "long",
+      timeZone: "Asia/Kolkata"
+  });
+  ```
+
+This will output the day of the week in the specified time zone.
+
+### Example
+
+Here’s a complete example demonstrating the use of the `Date` object:
+
+```javascript
+let myDate = new Date();
+console.log(myDate.toString()); // Current date and time as a string
+
+let myCreatedDate = new Date("01-14-2025");
+console.log(myCreatedDate.toLocaleString()); // Specific date as a localized string
+
+let myTimeStamp = Date.now();
+console.log(Math.floor(myTimeStamp / 1000)); // Current timestamp in seconds
+
+let newDate = new Date();
+console.log(newDate.getMonth() + 1); // Current month
+console.log(newDate.getDate()); // Current day of the month
+console.log(newDate.getDay()); // Day of the week
+```
+
+
