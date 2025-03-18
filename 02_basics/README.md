@@ -36,3 +36,38 @@ This file demonstrates how to create and manipulate arrays in JavaScript. It cov
     // Splice
     const myn2 = myArr.splice(1, 3); // Removes elements from index 1 to 3 (inclusive) and returns them as a new array.  Modifies the original array.
     ```
+
+### `02_array.js`
+
+This file demonstrates additional array operations in JavaScript, including concatenation, spread operator usage, flattening arrays, and the use of `Array.isArray`, `Array.from`, and `Array.of`.
+
+-   **Array Concatenation:** Demonstrates how to concatenate arrays using `concat` and the spread operator.
+    ```javascript
+    const marvel_heros = ["thor", "Ironman", "spiderman"];
+    const dc_heros = ["superman", "flash", "batman"];
+
+    // Concatenating arrays
+    const allHeros = marvel_heros.concat(dc_heros); // Returns a new array with all elements from both arrays
+
+    // Using spread operator
+    const all_new_heros = [...marvel_heros, ...dc_heros]; // Returns a new array with all elements from both arrays
+    ```
+-   **Flattening Arrays:** Shows how to flatten nested arrays using the `flat` method.
+    ```javascript
+    const another_array = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]];
+    const real_another_array = another_array.flat(Infinity); // Returns a new array with all sub-array elements concatenated
+    ```
+-   **Array Type Checking and Creation:** Demonstrates the use of `Array.isArray`, `Array.from`, and `Array.of`.
+    ```javascript
+    // Checking if a variable is an array
+    Array.isArray("Hitesh"); // Returns false
+
+    // Creating an array from a string
+    Array.from("Hitesh"); // Returns ["H", "i", "t", "e", "s", "h"]
+
+    // Creating an array from variables
+    let score1 = 100;
+    let score2 = 200;
+    let score3 = 300;
+    Array.of(score1, score2, score3); // Returns [100, 200, 300]
+    ```
