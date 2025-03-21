@@ -71,3 +71,51 @@ This file demonstrates additional array operations in JavaScript, including conc
     let score3 = 300;
     Array.of(score1, score2, score3); // Returns [100, 200, 300]
     ```
+
+### `03_objects.js`
+
+This file demonstrates how to create and manipulate objects in JavaScript. It covers object literals, symbols, and freezing objects.
+
+-   **Object Literals:** Demonstrates how to create objects using object literal notation.
+    ```javascript
+    const JsUser = {
+        name: "Hitesh",
+        "full name": "Hitesh Choudhary",
+        age: 18,
+        location: "Jaipur",
+        email: "hitesh@google.com",
+        isLoggedIn: false,
+        lastLoginDays: ["Monday", "Saturday"]
+    }
+    ```
+-   **Accessing Object Properties:** Shows how to access object properties using dot notation and bracket notation.
+    ```javascript
+    console.log(JsUser.email);
+    console.log(JsUser["email"]);
+    console.log(JsUser["full name"]);
+    ```
+-   **Symbols in Objects:** Demonstrates how to use symbols as object keys.
+    ```javascript
+    const mySym = Symbol("key1");
+    const JsUser = {
+        [mySym]: "mykey1"
+    }
+    console.log(JsUser[mySym]);
+    ```
+-   **Freezing Objects:** Explains how to freeze an object to prevent modifications.
+    ```javascript
+    Object.freeze(JsUser);
+    JsUser.email = "hitesh@microsoft.com"; // This change will not be applied
+    ```
+-   **Adding Functions to Objects:** Shows how to add functions to objects and use `this`.
+    ```javascript
+    JsUser.greeting = function(){
+        console.log("Hello JS user");
+    }
+    JsUser.greetingTwo = function(){
+        console.log(`Hello JS user, ${this.name}`);
+    }
+
+    console.log(JsUser.greeting());
+    console.log(JsUser.greetingTwo());
+    ```
