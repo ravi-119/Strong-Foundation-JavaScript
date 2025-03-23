@@ -119,3 +119,58 @@ This file demonstrates how to create and manipulate objects in JavaScript. It co
     console.log(JsUser.greeting());
     console.log(JsUser.greetingTwo());
     ```
+
+### `04_objects.js`
+
+This file demonstrates how to create and manipulate objects in JavaScript, focusing on object creation, nested objects, object merging, and object property access and checking.
+
+-   **Object Creation:** Demonstrates different ways to create objects.
+    ```javascript
+    // const tinderUser = new Object()
+    const tinderUser = {}
+
+    tinderUser.id = "123abc"
+    tinderUser.name = "Sammy"
+    tinderUser.isLoggedIn = false
+    ```
+-   **Nested Objects:** Shows how to work with nested objects.
+    ```javascript
+    const regularUser = {
+        email: "some@gmail.com",
+        fullname: {
+            userfullname: {
+                firstname: "hitesh",
+                lastname: "choudhary"
+            }
+        }
+    }
+
+    console.log(regularUser.fullname.userfullname.firstname);
+    ```
+-   **Object Merging:** Explains how to merge objects using `Object.assign` and the spread operator.
+    ```javascript
+    const obj1 = {1: "a", 2: "b"}
+    const obj2 = {3: "a", 4: "b"}
+
+    // Using spread operator
+    const obj3 = {...obj1, ...obj2}
+    ```
+-   **Array of Objects:** Demonstrates how to work with an array of objects and access their properties.
+    ```javascript
+    const users = [
+        {
+            id: 1,
+            email: "h@gmail.com"
+        },
+    ]
+
+    users[0].email
+    ```
+-   **Object Property Access and Checking:** Shows how to access object properties and check for their existence.
+    ```javascript
+    console.log(Object.keys(tinderUser)); // Returns an array of the object's keys
+    console.log(Object.values(tinderUser)); // Returns an array of the object's values
+    console.log(Object.entries(tinderUser)); // Returns an array of the object's key-value pairs
+
+    console.log(tinderUser.hasOwnProperty('isLoggedIn')); // Checks if the object has the specified property
+    ```
