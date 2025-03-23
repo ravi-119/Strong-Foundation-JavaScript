@@ -174,3 +174,20 @@ This file demonstrates how to create and manipulate objects in JavaScript, focus
 
     console.log(tinderUser.hasOwnProperty('isLoggedIn')); // Checks if the object has the specified property
     ```
+
+### `Destructuring`
+
+This file demonstrates how to destructure objects in JavaScript.
+
+-   **Destructuring Objects:** Demonstrates how to destructure objects to extract values into variables.
+    ```javascript
+    const course = {
+        coursename: "js in hindi",
+        price: "999",
+        courseInstructor: "hitesh"
+    }
+
+    const {courseInstructor: instructor} = course
+
+    console.log(instructor); // Output: hitesh
+    ```
