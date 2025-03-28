@@ -86,3 +86,67 @@ function returnSecondValue(getArray){
 - Object parameter handling
 - Array parameter handling
 - Template literals with object properties
+
+## Understanding Scopes in JavaScript
+
+### Global Scope
+```javascript
+var c = 300
+let a = 300
+```
+- Variables declared outside any function or block have global scope
+- Can be accessed from anywhere in the code
+- `var` declarations are added to the global object
+- `let` and `const` declarations are not added to the global object
+
+### Block Scope
+```javascript
+if (true) {
+    let a = 10
+    const b = 20
+}
+```
+- Variables declared inside a block (between `{}`) have block scope
+- `let` and `const` are block-scoped
+- Cannot be accessed outside the block
+- Helps prevent variable leakage
+
+### Function Scope
+```javascript
+function one(){
+    const username = "hitesh"
+    function two(){
+        const website = "youtube"
+        console.log(username); // Can access parent's variables
+    }
+    // console.log(website); // Cannot access child's variables
+}
+```
+- Variables declared inside a function are only accessible within that function
+- Nested functions can access variables from parent functions
+- Parent functions cannot access variables from nested functions
+- Creates closure scope
+
+### Hoisting
+```javascript
+console.log(addone(5)) // Works fine
+function addone(num){
+    return num + 1
+}
+
+addTwo(5) // Error: Cannot access before initialization
+const addTwo = function(num){
+    return num + 2
+}
+```
+- Function declarations are hoisted (can be used before declaration)
+- Function expressions using `let/const` are not hoisted
+- Variables declared with `var` are hoisted (initialized as undefined)
+- Variables declared with `let/const` are not hoisted (temporal dead zone)
+
+## Key Scope Concepts
+- Global scope vs Local scope
+- Block-level scope with `let` and `const`
+- Function scope and closures
+- Variable hoisting behavior
+- Temporal Dead Zone for `let/const`
