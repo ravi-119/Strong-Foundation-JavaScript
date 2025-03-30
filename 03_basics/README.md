@@ -204,6 +204,48 @@ const addTwo = (num1, num2) => ({result: num1 + num2})
 - Cannot be used as constructors
 - Best for callback functions and methods that don't need their own 'this'
 
+## Immediately Invoked Function Expressions (IIFE)
+
+### What is IIFE?
+```javascript
+(function chai(){
+    console.log(`DB CONNECTED`);
+})();
+```
+- Function that runs as soon as it is defined
+- Helps avoid global scope pollution
+- Useful for initialization code
+- Semicolon at end is important to terminate IIFE
+
+### Types of IIFE
+
+#### Named IIFE
+```javascript
+(function chai(){
+    console.log(`DB CONNECTED`);
+})();
+```
+- Has a function name (chai)
+- Useful for debugging
+- Can't be called again after execution
+
+#### Anonymous IIFE with Parameters
+```javascript
+((name) => {
+    console.log(`DB CONNECTED TWO ${name}`);
+})('hitesh');
+```
+- Arrow function syntax
+- Can accept parameters
+- Executes immediately with provided arguments
+
+### Key IIFE Concepts
+- Self-executing functions
+- Creates private scope
+- Prevents global namespace pollution
+- Common in module patterns
+- Used in modern JavaScript bundlers
+
 ## Key Scope Concepts
 - Global scope vs Local scope
 - Block-level scope with `let` and `const`
