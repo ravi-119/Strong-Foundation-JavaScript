@@ -144,6 +144,66 @@ const addTwo = function(num){
 - Variables declared with `var` are hoisted (initialized as undefined)
 - Variables declared with `let/const` are not hoisted (temporal dead zone)
 
+## Arrow Functions and 'this' Keyword
+
+### Object Methods and 'this'
+```javascript
+const user = {
+    username: "hitesh",
+    price: 999,
+    welcomeMessage: function() {
+        console.log(`${this.username} , welcome to website`);
+    }
+}
+```
+- 'this' refers to the current object context
+- Inside regular functions, 'this' refers to the object that calls the method
+- Example usage: `user.welcomeMessage()`
+
+### Regular Functions vs Arrow Functions
+```javascript
+// Regular function
+function chai() {
+    console.log(this.username); // undefined
+}
+
+// Arrow function
+const chai = () => {
+    console.log(this); // global object (window in browser)
+}
+```
+- Regular functions create their own 'this' context
+- Arrow functions inherit 'this' from their surrounding scope
+- Arrow functions don't bind their own 'this'
+
+### Arrow Function Syntax Variations
+```javascript
+// Basic syntax with explicit return
+const addTwo = (num1, num2) => {
+    return num1 + num2
+}
+
+// Implicit return (single line)
+const addTwo = (num1, num2) => num1 + num2
+
+// Implicit return with parentheses
+const addTwo = (num1, num2) => (num1 + num2)
+
+// Returning object literal
+const addTwo = (num1, num2) => ({result: num1 + num2})
+```
+- Parentheses are optional for single parameter
+- Empty parentheses required when no parameters
+- Curly braces and 'return' required for multiple statements
+- Wrap object literals in parentheses for implicit return
+
+## Key Arrow Function Concepts
+- Lexical 'this' binding
+- Shorter syntax for simple functions
+- Implicit returns
+- Cannot be used as constructors
+- Best for callback functions and methods that don't need their own 'this'
+
 ## Key Scope Concepts
 - Global scope vs Local scope
 - Block-level scope with `let` and `const`
