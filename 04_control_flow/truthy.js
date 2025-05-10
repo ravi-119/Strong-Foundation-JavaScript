@@ -23,7 +23,7 @@ if (Object.keys(emptyObj).length === 0) {
     console.log("Object is empty");
 }
 
-// Nullish Coalescing Operator (??): null undefined
+// Nullish Coalescing Operator (??): null, undefined
 
 let val1;
 // val1 = 5 ?? 10
@@ -41,3 +41,4 @@ console.log(val1);
 
 const iceTeaPrice = 100
 iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80")
+
