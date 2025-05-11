@@ -97,3 +97,77 @@ This file demonstrates:
 5. The use of `continue` to skip an iteration in a loop.
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
+---
+
+# Documentation for `two.js`
+
+This file demonstrates the use of `while` and `do-while` loops in JavaScript, along with examples of iterating over arrays.
+
+---
+
+## 1. Using a `while` Loop to Increment a Variable
+```javascript
+let index = 0;
+// while (index <= 10) {
+//     console.log(`Value of index is ${index}`);
+//     index = index + 2;
+// }
+```
+- A variable `index` is initialized to `0`.
+- A `while` loop is prepared to run as long as `index` is less than or equal to `10`.
+- Inside the loop:
+  - The current value of `index` is prepared to be logged (commented out).
+  - The value of `index` is incremented by `2` in each iteration.
+
+---
+
+## 2. Iterating Over an Array Using a `while` Loop
+```javascript
+let myArray = ['flash', "batman", "superman"];
+
+let arr = 0;
+while (arr < myArray.length) {
+    //console.log(`Value is ${myArray[arr]}`);
+    arr = arr + 1;
+}
+```
+- An array `myArray` contains three superhero names.
+- A variable `arr` is initialized to `0`.
+- A `while` loop runs as long as `arr` is less than the length of `myArray`.
+- Inside the loop:
+  - The current element of the array is prepared to be logged (commented out).
+  - The value of `arr` is incremented by `1` in each iteration.
+
+---
+
+## 3. Using a `do-while` Loop
+```javascript
+let score = 11;
+
+do {
+    console.log(`Score is ${score}`);
+    score++;
+} while (score <= 10);
+```
+- A variable `score` is initialized to `11`.
+- A `do-while` loop is used to execute the block of code at least once, regardless of the condition.
+- Inside the loop:
+  - The current value of `score` is logged.
+  - The value of `score` is incremented by `1`.
+- The loop condition checks if `score` is less than or equal to `10`. Since `score` starts at `11`, the loop runs only once.
+
+---
+
+## Summary
+This file demonstrates:
+1. The use of `while` loops to iterate based on a condition.
+2. Iterating over arrays using a `while` loop.
+3. The use of `do-while` loops to ensure the block of code executes at least once.
+
+Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
+
+
+
+
