@@ -253,6 +253,111 @@ This file demonstrates:
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
 
+---
+
+# Documentation for `four.js`
+
+This file demonstrates the use of the `for...in` loop in JavaScript for iterating over the properties of objects and the indices of arrays. It also explains why `for...in` is not suitable for iterating over Map objects.
+
+---
+
+## 1. Defining an Object
+
+```javascript
+const myObject = {
+    js: 'javascript',
+    cpp: 'C++',
+    rb: "ruby",
+    swift: "swift by apple"
+}
+```
+- `const myObject = { ... }`  
+  - Declares a constant variable named `myObject` and assigns it an object with four properties.
+  - Each property represents a programming language shortcut as the key and its full name as the value.
+    - `js: 'javascript'` — Key is `'js'`, value is `'javascript'`.
+    - `cpp: 'C++'` — Key is `'cpp'`, value is `'C++'`.
+    - `rb: "ruby"` — Key is `'rb'`, value is `'ruby'`.
+    - `swift: "swift by apple"` — Key is `'swift'`, value is `'swift by apple'`.
+
+---
+
+## 2. Iterating Over Object Properties with `for...in`
+
+```javascript
+for (const key in myObject) {
+    //console.log(`${key} shortcut is for ${myObject[key]}`);
+}
+```
+- `for (const key in myObject) { ... }`  
+  - Uses a `for...in` loop to iterate over all enumerable property keys in `myObject`.
+  - On each iteration, `key` is assigned the name of a property (e.g., `'js'`, `'cpp'`, etc.).
+  - Inside the loop, you can access the value using `myObject[key]`.
+  - The commented-out line:
+    - `//console.log(`${key} shortcut is for ${myObject[key]}`);`
+    - Would print a message like: `js shortcut is for javascript`.
+
+---
+
+## 3. Defining an Array
+
+```javascript
+const programming = ["js", "rb", "py", "java", "cpp"]
+```
+- `const programming = ["js", "rb", "py", "java", "cpp"]`
+  - Declares a constant array named `programming` containing five strings, each representing a programming language shortcut.
+
+---
+
+## 4. Iterating Over Array Indices with `for...in`
+
+```javascript
+for (const key in programming) {
+    //console.log(programming[key]);
+}
+```
+- `for (const key in programming) { ... }`
+  - Uses a `for...in` loop to iterate over the enumerable property keys (indices) of the `programming` array.
+  - On each iteration, `key` is a string representing the index (e.g., `'0'`, `'1'`, etc.).
+  - The commented-out line:
+    - `//console.log(programming[key]);`
+    - Would print each element of the array in order.
+
+---
+
+## 5. Attempting to Use `for...in` with a Map (Not Recommended)
+
+```javascript
+// const map = new Map()
+// map.set('IN', "India")
+// map.set('USA', "United States of America")
+// map.set('Fr', "France")
+// map.set('IN', "India")
+
+// for (const key in map) {
+//     console.log(key);
+// }
+```
+- The code above is commented out.
+- `const map = new Map()` creates a new Map object.
+- `map.set(...)` adds key-value pairs to the map.
+- Attempting to use `for...in` on a Map object:
+  - `for (const key in map) { ... }`
+  - This is not recommended because `for...in` is designed for plain objects, not Map objects.
+  - It will not iterate over the map's entries as expected.
+  - Instead, it may iterate over inherited properties or methods, not the actual data.
+- To iterate over a Map, use `for...of` with `map.entries()` or directly on the map.
+
+---
+
+## Summary
+
+This file demonstrates:
+1. How to define and iterate over the properties of a plain object using `for...in`.
+2. How to use `for...in` to iterate over the indices of an array (not the values directly).
+3. Why `for...in` is not suitable for Map objects, and that a different approach is needed for Maps.
+
+Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
 
 
 
