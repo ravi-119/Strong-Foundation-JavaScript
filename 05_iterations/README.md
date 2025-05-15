@@ -358,6 +358,135 @@ This file demonstrates:
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
 
+---
+
+# Documentation for `five.js`
+
+This file demonstrates the use of the `forEach` method in JavaScript for iterating over arrays, including arrays of primitive values and arrays of objects. Each section below explains the code line by line and the concepts involved.
+
+---
+
+## 1. Defining an Array of Strings
+
+```javascript
+const coding = ["js", "ruby", "java", "python", "cpp"]
+```
+- `const coding = [...]`
+  - Declares a constant array named `coding` containing five strings.
+  - Each string represents a programming language or its shortcut.
+
+---
+
+## 2. Using `forEach` with an Anonymous Function
+
+```javascript
+// coding.forEach( function (val){
+//     console.log(val);
+// } )
+```
+- `coding.forEach(function(val) { ... })`
+  - Iterates over each element in the `coding` array.
+  - For each iteration, the current element is passed as `val` to the function.
+  - The commented-out `console.log(val);` would print each language shortcut to the console.
+
+---
+
+## 3. Using `forEach` with an Arrow Function
+
+```javascript
+// coding.forEach( (item) => {
+//     console.log(item);
+// } )
+```
+- `coding.forEach((item) => { ... })`
+  - Uses an arrow function to iterate over the array.
+  - `item` represents the current element.
+  - The commented-out `console.log(item);` would print each language shortcut.
+
+---
+
+## 4. Passing a Named Function to `forEach`
+
+```javascript
+// function printMe(item){
+//     console.log(item);
+// }
+
+// coding.forEach(printMe)
+```
+- `function printMe(item) { ... }`
+  - Defines a function named `printMe` that takes one argument and logs it.
+- `coding.forEach(printMe)`
+  - Passes the `printMe` function to `forEach`, so each element is logged by the function.
+
+---
+
+## 5. Using `forEach` with Multiple Parameters
+
+```javascript
+// coding.forEach( (item, index, arr)=> {
+//     console.log(item, index, arr);
+// } )
+```
+- `coding.forEach((item, index, arr) => { ... })`
+  - The callback receives three arguments:
+    - `item`: the current element.
+    - `index`: the index of the current element.
+    - `arr`: the entire array.
+  - The commented-out `console.log(item, index, arr);` would print the value, its index, and the whole array for each iteration.
+
+---
+
+## 6. Defining an Array of Objects
+
+```javascript
+const myCoding = [
+    {
+        languageName: "javascript",
+        languageFileName: "js"
+    },
+    {
+        languageName: "java",
+        languageFileName: "java"
+    },
+    {
+        languageName: "python",
+        languageFileName: "py"
+    },
+]
+```
+- `const myCoding = [ ... ]`
+  - Declares a constant array named `myCoding` containing three objects.
+  - Each object represents a programming language with two properties:
+    - `languageName`: the full name of the language.
+    - `languageFileName`: the typical file extension for that language.
+
+---
+
+## 7. Iterating Over an Array of Objects with `forEach`
+
+```javascript
+myCoding.forEach( (item) => {
+    console.log(item.languageName);
+} )
+```
+- `myCoding.forEach((item) => { ... })`
+  - Iterates over each object in the `myCoding` array.
+  - For each iteration, `item` is the current object.
+  - `console.log(item.languageName);` prints the `languageName` property of each object (e.g., "javascript", "java", "python").
+
+---
+
+## Summary
+
+This file demonstrates:
+1. How to use the `forEach` method to iterate over arrays of primitive values and objects.
+2. Different ways to provide callback functions to `forEach` (anonymous, arrow, named).
+3. How to access array elements, their indices, and the array itself within a `forEach` callback.
+4. How to iterate over arrays of objects and access their properties.
+
+Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
 
 
 
