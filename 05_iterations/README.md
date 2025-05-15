@@ -167,6 +167,92 @@ This file demonstrates:
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
 
+---
+
+# Documentation for `three.js`
+
+This file demonstrates the use of the `for...of` loop in JavaScript for iterating over arrays, strings, and maps, and explains why it cannot be used directly with plain objects.
+
+---
+
+## 1. Using `for...of` with Arrays
+```javascript
+const arr = [1, 2, 3, 4, 5]
+
+for (const num of arr) {
+    //console.log(num);
+}
+```
+- An array `arr` is defined with five numbers.
+- The `for...of` loop iterates over each element in the array.
+  - In each iteration, the current element is assigned to `num`.
+  - The value of `num` is prepared to be logged (commented out).
+
+---
+
+## 2. Using `for...of` with Strings
+```javascript
+const greetings = "Hello world!"
+for (const greet of greetings) {
+    //console.log(`Each char is ${greet}`)
+}
+```
+- A string `greetings` is defined.
+- The `for...of` loop iterates over each character in the string.
+  - In each iteration, the current character is assigned to `greet`.
+  - The character is prepared to be logged with a message (commented out).
+
+---
+
+## 3. Using `for...of` with Maps
+```javascript
+const map = new Map()
+map.set('IN', "India")
+map.set('USA', "United States of America")
+map.set('Fr', "France")
+map.set('IN', "India")
+
+// console.log(map);
+
+for (const [key, value] of map) {
+    // console.log(key, ':-', value);
+}
+```
+- A `Map` object `map` is created.
+- Key-value pairs are added to the map using `set`.
+  - Note: Setting the same key (`'IN'`) twice will overwrite the previous value.
+- The map can be logged to view its contents (commented out).
+- The `for...of` loop iterates over each `[key, value]` pair in the map.
+  - In each iteration, `key` and `value` are assigned from the current entry.
+  - The key and value are prepared to be logged in a formatted string (commented out).
+
+---
+
+## 4. Attempting `for...of` with Objects (Not Supported)
+```javascript
+const myObject = {
+    game1: 'NFS',
+    game2: 'Spiderman'
+}
+
+// for (const [key, value] of myObject) {
+//     console.log(key, ':-', value);
+// }
+```
+- An object `myObject` is defined with two properties.
+- Attempting to use `for...of` directly on an object will result in an error because plain objects are not iterable.
+- The commented-out code shows an invalid usage of `for...of` with an object.
+
+---
+
+## Summary
+This file demonstrates:
+1. Iterating over arrays and strings using `for...of`.
+2. Iterating over maps using `for...of` to access key-value pairs.
+3. The limitation that plain objects cannot be directly iterated with `for...of`.
+
+Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
 
 
 
