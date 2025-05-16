@@ -487,6 +487,152 @@ This file demonstrates:
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
 
+---
+
+# Documentation for `six.js`
+
+This file demonstrates the use of array iteration methods in JavaScript, including `forEach` and `filter`, and how to work with arrays of numbers and objects. Each section below explains the code line by line and the concepts involved.
+
+---
+
+## 1. Using `forEach` and Return Value
+
+```javascript
+// const coding = ["js", "ruby", "java", "python", "cpp"]
+
+
+// const values = coding.forEach( (item) => {
+//     //console.log(item);
+//     return item
+// } )
+
+// console.log(values);
+```
+- `const coding = [...]`
+  - Declares an array of programming language shortcuts.
+- `coding.forEach((item) => { ... })`
+  - Iterates over each element in the `coding` array.
+  - The callback receives `item` as the current element.
+  - The commented-out `console.log(item);` would print each element.
+  - The `return item` inside `forEach` does **not** collect values; `forEach` always returns `undefined`.
+- `console.log(values);`
+  - Would print `undefined` because `forEach` does not return a new array.
+
+---
+
+## 2. Using `filter` to Create a New Array
+
+```javascript
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const newNums = myNums.filter( (num) => {
+//     return num > 4
+// } )
+```
+- `const myNums = [...]`
+  - Declares an array of numbers from 1 to 10.
+- `myNums.filter((num) => { return num > 4 })`
+  - Uses the `filter` method to create a new array containing only numbers greater than 4.
+  - The callback receives `num` as the current element.
+  - Returns `true` for numbers greater than 4, so those are included in the new array.
+- The result is stored in `newNums` (commented out).
+
+---
+
+## 3. Filtering with `forEach` and Manual Push
+
+```javascript
+// const newNums = []
+
+// myNums.forEach( (num) => {
+//     if (num > 4) {
+//         newNums.push(num)
+//     }
+// } )
+
+// console.log(newNums);
+```
+- `const newNums = []`
+  - Declares an empty array to store filtered numbers.
+- `myNums.forEach((num) => { ... })`
+  - Iterates over each number in `myNums`.
+  - If `num > 4`, the number is pushed into `newNums`.
+- `console.log(newNums);`
+  - Would print the array of numbers greater than 4.
+- This approach is more verbose than using `filter`, but achieves the same result.
+
+---
+
+## 4. Array of Book Objects
+
+```javascript
+const books = [
+    { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
+    { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
+    { title: 'Book Three', genre: 'History', publish: 1999, edition: 2007 },
+    { title: 'Book Four', genre: 'Non-Fiction', publish: 1989, edition: 2010 },
+    { title: 'Book Five', genre: 'Science', publish: 2009, edition: 2014 },
+    { title: 'Book Six', genre: 'Fiction', publish: 1987, edition: 2010 },
+    { title: 'Book Seven', genre: 'History', publish: 1986, edition: 1996 },
+    { title: 'Book Eight', genre: 'Science', publish: 2011, edition: 2016 },
+    { title: 'Book Nine', genre: 'Non-Fiction', publish: 1981, edition: 1989 },
+  ];
+```
+- `const books = [ ... ]`
+  - Declares an array of objects, each representing a book.
+  - Each object has properties:
+    - `title`: the book's title.
+    - `genre`: the book's genre.
+    - `publish`: the year the book was published.
+    - `edition`: the year of the book's edition.
+
+---
+
+## 5. Filtering Books by Genre
+
+```javascript
+let userBooks = books.filter( (bk) => bk.genre === 'History')
+```
+- `books.filter((bk) => bk.genre === 'History')`
+  - Uses `filter` to create a new array containing only books where the `genre` is `'History'`.
+  - The callback receives `bk` as the current book object.
+  - Returns `true` if the book's genre is `'History'`.
+- The result is stored in `userBooks`.
+
+---
+
+## 6. Filtering Books by Publish Year and Genre
+
+```javascript
+userBooks = books.filter( (bk) => { 
+    return bk.publish >= 1995 && bk.genre === "History"
+})
+console.log(userBooks);
+```
+- `books.filter((bk) => { return bk.publish >= 1995 && bk.genre === "History" })`
+  - Filters the `books` array for books published in or after 1995 **and** with genre `'History'`.
+  - The callback returns `true` only for books meeting both conditions.
+- The filtered array is assigned to `userBooks`, replacing the previous value.
+- `console.log(userBooks);`
+  - Prints the filtered array of books to the console.
+
+---
+
+## Summary
+
+This file demonstrates:
+1. The difference between `forEach` and `filter` (return value and use cases).
+2. How to use `filter` to create new arrays based on conditions.
+3. How to manually filter arrays using `forEach` and `push`.
+4. How to filter arrays of objects using multiple conditions.
+
+Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
+
+
+
+
+
+
 
 
 
