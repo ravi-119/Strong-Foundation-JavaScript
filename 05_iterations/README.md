@@ -699,6 +699,126 @@ This file demonstrates:
 
 Uncomment the commented-out `map` example to see its effect separately.
 
+---
+
+# Documentation for `eight.js`
+
+This file demonstrates the use of the `reduce` method in JavaScript for accumulating values from arrays, both for simple sums and for summing properties of objects within an array. Each section below explains the code line by line and the concepts involved.
+
+---
+
+## 1. Defining an Array of Numbers
+
+```javascript
+const myNums = [1, 2, 3]
+```
+- `const myNums = [1, 2, 3]`
+  - Declares a constant array named `myNums` containing the numbers 1, 2, and 3.
+
+---
+
+## 2. Using `reduce` with a Callback Function
+
+```javascript
+// const myTotal = myNums.reduce(function (acc, currval) {
+//     console.log(`acc: ${acc} and currval: ${currval}`);
+//     return acc + currval
+// }, 0)
+```
+- `myNums.reduce(function (acc, currval) { ... }, 0)`
+  - (Commented out) Would use the `reduce` method to sum all elements in `myNums`.
+  - The callback receives two arguments:
+    - `acc`: the accumulator, which holds the running total.
+    - `currval`: the current value being processed in the array.
+  - `console.log(...)` would print the accumulator and current value at each step.
+  - `return acc + currval` adds the current value to the accumulator.
+  - The second argument `0` is the initial value of the accumulator.
+
+---
+
+## 3. Using `reduce` with an Arrow Function
+
+```javascript
+const myTotal = myNums.reduce( (acc, curr) => acc+curr, 0)
+```
+- `myNums.reduce((acc, curr) => acc + curr, 0)`
+  - Uses an arrow function to sum all elements in `myNums`.
+  - `acc` starts at 0, and each `curr` is added to it.
+  - The result is stored in `myTotal`.
+
+---
+
+## 4. Outputting the Total
+
+```javascript
+console.log(myTotal);
+```
+- `console.log(myTotal);`
+  - Prints the sum of the array (`6`) to the console.
+
+---
+
+## 5. Defining an Array of Shopping Cart Items
+
+```javascript
+const shoppingCart = [
+    {
+        itemName: "js course",
+        price: 2999
+    },
+    {
+        itemName: "py course",
+        price: 999
+    },
+    {
+        itemName: "mobile dev course",
+        price: 5999
+    },
+    {
+        itemName: "data science course",
+        price: 12999
+    },
+]
+```
+- `const shoppingCart = [ ... ]`
+  - Declares an array of objects, each representing an item in a shopping cart.
+  - Each object has:
+    - `itemName`: the name of the course.
+    - `price`: the price of the course.
+
+---
+
+## 6. Using `reduce` to Sum Object Properties
+
+```javascript
+const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
+```
+- `shoppingCart.reduce((acc, item) => acc + item.price, 0)`
+  - Uses `reduce` to sum the `price` property of each object in the `shoppingCart` array.
+  - `acc` starts at 0, and each `item.price` is added to it.
+  - The result is stored in `priceToPay`.
+
+---
+
+## 7. Outputting the Total Price
+
+```javascript
+console.log(priceToPay);
+```
+- `console.log(priceToPay);`
+  - Prints the total price of all items in the shopping cart (`22996`) to the console.
+
+---
+
+## Summary
+
+This file demonstrates:
+1. How to use `reduce` to sum numbers in an array.
+2. How to use `reduce` to accumulate values from object properties in an array.
+3. The difference between using a traditional function and an arrow function with `reduce`.
+4. How to provide an initial value to the accumulator in `reduce`.
+
+Uncomment the commented-out code to see the step-by-step accumulation process.
 
 
 
