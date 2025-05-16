@@ -628,6 +628,76 @@ This file demonstrates:
 
 Uncomment the `console.log` statements to observe the output in a JavaScript runtime environment.
 
+---
+
+# Documentation for `seven.js`
+
+This file demonstrates the use of the `map` and `filter` array methods in JavaScript, including method chaining. Each section below explains the code line by line and the concepts involved.
+
+---
+
+## 1. Defining an Array of Numbers
+
+```javascript
+const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+- `const myNumers = [...]`
+  - Declares a constant array named `myNumers` containing the numbers 1 through 10.
+
+---
+
+## 2. Using `map` to Transform Array Elements
+
+```javascript
+// const newNums = myNumers.map( (num) => { return num + 10})
+```
+- `myNumers.map((num) => { return num + 10 })`
+  - (Commented out) Would create a new array by adding 10 to each element of `myNumers`.
+  - `map` returns a new array with the results of applying the callback to each element.
+
+---
+
+## 3. Chaining `map` and `filter` Methods
+
+```javascript
+const newNums = myNumers
+                .map((num) => num * 10 )
+                .map( (num) => num + 1)
+                .filter( (num) => num >= 40)
+```
+- `const newNums = myNumers ...`
+  - Declares a new constant `newNums` and assigns it the result of a chain of array operations.
+- `.map((num) => num * 10 )`
+  - Multiplies each element of `myNumers` by 10.
+  - The result is a new array: `[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`.
+- `.map((num) => num + 1)`
+  - Adds 1 to each element of the previous array.
+  - The result is: `[11, 21, 31, 41, 51, 61, 71, 81, 91, 101]`.
+- `.filter((num) => num >= 40)`
+  - Filters the array to include only numbers greater than or equal to 40.
+  - The final result is: `[41, 51, 61, 71, 81, 91, 101]`.
+
+---
+
+## 4. Outputting the Result
+
+```javascript
+console.log(newNums);
+```
+- `console.log(newNums);`
+  - Prints the final array `[41, 51, 61, 71, 81, 91, 101]` to the console.
+
+---
+
+## Summary
+
+This file demonstrates:
+1. How to use `map` to transform each element of an array.
+2. How to chain multiple `map` and `filter` methods for complex transformations.
+3. How to use `filter` to select elements based on a condition.
+4. The concept of method chaining for concise and readable array processing.
+
+Uncomment the commented-out `map` example to see its effect separately.
 
 
 
