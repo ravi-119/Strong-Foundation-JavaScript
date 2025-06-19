@@ -687,7 +687,7 @@ This file is a practical example of:
 - Practicing with both safe (text node) and flexible (innerHTML) content insertion.
 
 Experiment by changing the function calls or selectors to see how the DOM updates in real time.
-
+---
 
 
 
