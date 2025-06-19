@@ -257,5 +257,186 @@ setInterval(function () {
 
 ---
 
+# Documentation for Number Guessing Game Script
+
+This section explains a JavaScript snippet that implements a number guessing game. The script demonstrates random number generation, DOM selection, event handling, input validation, game state management, and dynamic UI updates.
+
+---
+
+## 1. Initializing Game Variables and Selecting Elements
+
+```javascript
+let randomNumber = parseInt(Math.random() * 100 + 1);
+
+const submit = document.querySelector('#subt');
+const userInput = document.querySelector('#guessField');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+let prevGuess = [];
+let numGuess = 1;
+
+let playGame = true;
+```
+- Generates a random number between 1 and 100 for the user to guess.
+- Selects various DOM elements for user input, displaying guesses, remaining attempts, feedback, and game reset.
+- Initializes variables to track previous guesses, the number of attempts, and whether the game is active.
+
+---
+
+## 2. Handling User Guesses
+
+```javascript
+if (playGame) {
+  submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    console.log(guess);
+    validateGuess(guess);
+  });
+}
+```
+- Adds a click event listener to the submit button.
+- Prevents the default form submission.
+- Reads and parses the user's guess, then calls `validateGuess`.
+
+---
+
+## 3. Validating the Guess
+
+```javascript
+function validateGuess(guess) {
+  if (isNaN(guess)) {
+    alert('PLease enter a valid number');
+  } else if (guess < 1) {
+    alert('PLease enter a number more than 1');
+  } else if (guess > 100) {
+    alert('PLease enter a  number less than 100');
+  } else {
+    prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMessage(`Game Over. Random number was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+```
+- Ensures the guess is a valid number between 1 and 100.
+- If invalid, shows an alert.
+- If valid, adds the guess to the history and checks if the maximum number of attempts (10) is reached.
+- If attempts are exhausted, ends the game and reveals the number.
+
+---
+
+## 4. Checking the Guess
+
+```javascript
+function checkGuess(guess) {
+  if (guess === randomNumber) {
+    displayMessage(`You guessed it right`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMessage(`Number is TOOO low`);
+  } else if (guess > randomNumber) {
+    displayMessage(`Number is TOOO High`);
+  }
+}
+```
+- Compares the guess to the random number.
+- Displays feedback if the guess is too low, too high, or correct.
+- Ends the game if guessed correctly.
+
+---
+
+## 5. Displaying Guesses and Remaining Attempts
+
+```javascript
+function displayGuess(guess) {
+  userInput.value = '';
+  guessSlot.innerHTML += `${guess}, `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess} `;
+}
+```
+- Clears the input field.
+- Appends the guess to the list of previous guesses.
+- Updates the number of remaining attempts.
+
+---
+
+## 6. Displaying Feedback Messages
+
+```javascript
+function displayMessage(message) {
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+}
+```
+- Shows feedback messages (too low, too high, correct, or game over) in the UI.
+
+---
+
+## 7. Ending and Restarting the Game
+
+```javascript
+function endGame() {
+  userInput.value = '';
+  userInput.setAttribute('disabled', '');
+  p.classList.add('button');
+  p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+function newGame() {
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    prevGuess = [];
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = `${11 - numGuess} `;
+    userInput.removeAttribute('disabled');
+    startOver.removeChild(p);
+
+    playGame = true;
+  });
+}
+```
+- Disables input and shows a "Start new Game" button when the game ends.
+- Clicking the button resets all variables and UI elements for a new game.
+
+---
+
+## 8. Example HTML Structure
+
+```html
+<input type="number" id="guessField" />
+<button id="subt">Submit</button>
+<div class="guesses"></div>
+<div class="lastResult"></div>
+<div class="lowOrHi"></div>
+<div class="resultParas"></div>
+```
+- Use these elements in your HTML to connect with the script.
+
+---
+
+## 9. Summary
+
+- Demonstrates random number generation, DOM selection, event handling, and game state management.
+- Validates user input and provides real-time feedback.
+- Handles game over and restart logic for a complete interactive experience.
+
+---
+
 
 
