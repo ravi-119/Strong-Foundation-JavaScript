@@ -218,6 +218,144 @@ document.getElementById('child').addEventListener('click', function() {
 
 ---
 
+## 11. Documentation for two.html
+
+This section explains the structure and JavaScript logic of `two.html`, which demonstrates the use of `setTimeout`, clearing timeouts, and basic event handling.
+
+### 11.1. HTML Structure
+
+- Contains a heading (`<h1>Chai aur code</h1>`)
+- A single button with id `stop`.
+
+**HTML Example:**
+```html
+<h1>Chai aur code</h1>
+<button id="stop">Stop</button>
+```
+
+### 11.2. JavaScript Concepts Demonstrated
+
+#### setTimeout
+
+- `setTimeout` schedules a function to run after a specified delay (in milliseconds).
+- In this file, it is used to change the heading text after 2 seconds.
+
+```javascript
+const changeText = function(){
+    document.querySelector('h1').innerHTML = "best JS series"
+}
+const changeMe = setTimeout(changeText, 2000)
+```
+- After 2 seconds, the heading changes to "best JS series".
+
+#### clearTimeout
+
+- `clearTimeout` cancels a timeout set by `setTimeout` if called before the timer completes.
+- The timeout id returned by `setTimeout` is stored in `changeMe`.
+- When the "Stop" button is clicked, the timeout is cleared, preventing the heading from changing.
+
+```javascript
+document.querySelector('#stop').addEventListener('click', function(){
+    clearTimeout(changeMe)
+    console.log("STOPPED")
+})
+```
+- This demonstrates how to provide users with control over scheduled actions.
+
+#### Event Handling
+
+- The "Stop" button uses `addEventListener` to listen for click events.
+- On click, it cancels the pending timeout and logs "STOPPED" to the console.
+
+### 11.3. Key Takeaways
+
+- Use `setTimeout` to schedule delayed actions.
+- Use `clearTimeout` to cancel scheduled actions before they execute.
+- Attach event listeners to elements for interactive control.
+- Always store the timeout id if you may need to cancel it.
+
+---
+
+## 12. Documentation for three.html
+
+This section covers `three.html`, which demonstrates the use of `setInterval`, `clearInterval`, and timer-based repeated actions.
+
+### 12.1. HTML Structure
+
+- Contains a heading (`<h1>Chai aur Javascript</h1>`)
+- Two buttons: "Start" (id `start`) and "Stop" (id `stop`)
+
+**HTML Example:**
+```html
+<h1>Chai aur Javascript</h1>
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+```
+
+### 12.2. JavaScript Concepts Demonstrated
+
+#### setInterval
+
+- `setInterval` repeatedly calls a function at specified intervals (in milliseconds).
+- In the provided code, `sayDate` logs a string and the current timestamp every second.
+
+```javascript
+const sayDate = function(str){
+    console.log(str, Date.now());
+}
+const intervalId = setInterval(sayDate, 1000, "hi")
+```
+- This will log `"hi"` and the current timestamp every second.
+
+#### clearInterval
+
+- `clearInterval` stops the repeated execution started by `setInterval`.
+- In the provided code, `clearInterval(intervalId)` is called immediately, so the interval only runs once (or not at all, depending on timing).
+- In a practical scenario, you would typically start the interval on "Start" button click and stop it on "Stop" button click.
+
+#### Practical Usage (Suggested Improvement)
+
+- Attach event listeners to "Start" and "Stop" buttons.
+- On "Start", begin the interval if not already running.
+- On "Stop", clear the interval.
+
+**Example Implementation:**
+```javascript
+let intervalId;
+document.getElementById('start').addEventListener('click', function(){
+    if (!intervalId) {
+        intervalId = setInterval(sayDate, 1000, "hi");
+    }
+});
+document.getElementById('stop').addEventListener('click', function(){
+    clearInterval(intervalId);
+    intervalId = null;
+});
+```
+
+#### Key Points
+
+- `setInterval` is used for repeated actions (e.g., clocks, polling).
+- Always store the interval id to clear it later.
+- Use event listeners to provide user control over timers.
+
+### 12.3. Summary
+
+- Use `setInterval` for repeated execution, `clearInterval` to stop.
+- Combine with event listeners for interactive timer controls.
+- Always manage timer ids to avoid memory leaks or unexpected behavior.
+
+---
+
+### Summary
+
+- **Bubbling**: Event flows from the target element up to the root (default).
+- **Capturing**: Event flows from the root down to the target element (less common).
+- Use the third parameter of `addEventListener` to control the phase.
+- `event.stopPropagation()` halts the event in its tracks.
+
+---
+
 
 
 
