@@ -37,6 +37,33 @@ This file demonstrates how to create and manipulate arrays in JavaScript. It cov
     const myn2 = myArr.splice(1, 3); // Removes elements from index 1 to 3 (inclusive) and returns them as a new array.  Modifies the original array.
     ```
 
+
+    -   **Splice and Slice Comparison:** Detailed explanation of the differences between `splice` and `slice`.
+        -   **splice()** - Modifies the original array by adding/removing elements.
+            ```javascript
+            Parameters
+            start (required) - The index from where you want to start changing the array.
+            deleteCount (optional, default = 0) - Number of elements to remove from the start index.
+            item1, item2, ... (optional) - Elements to add starting from the start index.
+            const arr = [10, 20, 30, 40];
+            arr.splice(1, 2); // Removes 2 elements starting at index 1
+            console.log(arr); // [10, 40]
+
+            arr.splice(1, 0, 15, 17); // Adds elements without removing
+            console.log(arr); // [10, 15, 17, 20, 30]
+            ```
+        -   **slice()** - Creates a new array without modifying the original.
+            ```javascript
+            Parameters
+            start (optional, default = 0) - The index to start copying (inclusive).
+            end (optional, default = array.length) - The index to stop copying (exclusive).
+            const arr = [10, 20, 30, 40, 50];
+            console.log(arr.slice(1, 4)); // [20, 30, 40]
+            console.log(arr.slice(2));    // [30, 40, 50]
+            ```
+        -   **Key Difference:** `splice()` modifies the original array, while `slice()` returns a new array without modification.
+
+
 ### `02_array.js`
 
 This file demonstrates additional array operations in JavaScript, including concatenation, spread operator usage, flattening arrays, and the use of `Array.isArray`, `Array.from`, and `Array.of`.
